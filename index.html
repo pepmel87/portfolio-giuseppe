@@ -5,80 +5,34 @@
     <title>Giuseppe Melizza | Cantante</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <style>
-        @font-face {
-            font-family: 'Breathing';
-            src: url('Breathing.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'FuturaBold';
-            src: url('FuturaBold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-        html, body { 
-            background:#091b4a; height:100%; margin:0; 
-            font-family:'FuturaBold', Arial, sans-serif; 
-        }
-        .swiper { width:100vw; height:100vh;}
-        .slide-row { display:flex; flex-direction:row; width:100vw; height:100vh; position:relative;}
-        .img-col {
-            width:50vw; height:100vh;
-            background-size:cover; background-position:center;
-            position:relative; z-index:1;
-        }
+        @font-face { font-family: 'Breathing'; src: url('Breathing.ttf') format('truetype'); }
+        @font-face { font-family: 'FuturaBold'; src: url('FuturaBold.ttf') format('truetype'); font-weight:bold; font-style:normal; }
+        html, body { background:#091b4a; margin:0; height:100%; font-family:'FuturaBold', Arial, sans-serif; font-size:110%; }
+        .swiper { width:100vw; height:100vh; }
+        .slide-row { display:flex; width:100vw; height:100vh; }
+        .img-col { width:50vw; height:100vh; background-size:cover; background-position:center; }
         .img-col.right { order:2; }
-        .txt-col { width:50vw; background:#091b4a; height:100vh; display:flex; align-items:center; justify-content:center; z-index:1;}
-        .txt-box { 
-            color:#FFD66B; 
-            font-size:1.18rem; 
-            max-width:90%; 
-            text-align:left; 
-            font-family:'FuturaBold', Arial, sans-serif;
-        }
-        .header-img {
-            display:block;
-            width:100%;
-            max-width:420px;
-            margin:0 auto 20px auto;
-        }
-        .title {
-            font-family: 'Breathing', Arial, sans-serif;
-            font-size: 2.1rem;
-            letter-spacing: 1px;
-            margin-bottom: 18px;
-            color: #FFD66B;
-            text-transform: none;
-        }
-        .subtitle {
-            font-family: 'Breathing', Arial, sans-serif;
-            font-size:1.25rem;
-            margin-bottom:26px;
-            color:#F1B575;
-        }
-        .sample-block { margin:28px 0 0 0;}
-        .sample-label { 
-            font-size:1rem; 
-            color:#FFD66B; 
-            font-family:'FuturaBold', Arial, sans-serif; 
-            margin-bottom:7px;
-            letter-spacing: 1px;
-        }
-        audio { width:94%; border-radius:12px; background:#233265; margin-top:8px;}
+        .txt-col { width:50vw; background:#091b4a; height:100vh; display:flex; align-items:center; justify-content:center; }
+        .txt-box { color:#FFD66B; font-size:1.287rem; max-width:90%; text-align:left;}
+        .header-img { display:block; width:100%; max-width:600px; height:auto; margin:0 0 20px 0; }
+        .title { font-family: 'Breathing', Arial, sans-serif; font-size:2.31rem; letter-spacing:1px; margin-bottom:19.8px; color:#FFD66B; }
+        .subtitle { font-family: 'Breathing', Arial, sans-serif; font-size:1.375rem; margin-bottom:28.6px; color:#F1B575;}
+        .sample-block { margin:30.8px 0 0 0;}
+        .sample-label { font-size:1.1rem; color:#FFD66B; font-family:'FuturaBold', Arial, sans-serif; margin-bottom:7.7px; letter-spacing:1px;}
+        audio { width:94%; border-radius:12px; background:#233265; margin-top:8.8px;}
         @media(max-width:900px){
             .slide-row { flex-direction:column; }
             .img-col, .txt-col { width:100vw; height:50vh;}
-            .txt-box { font-size:0.97rem;}
-            .title { font-size:1.1rem;}
-            .header-img { max-width:90vw; margin-bottom:14px;}
+            .txt-box { font-size:1.067rem;}
+            .title { font-size:1.21rem;}
+            .header-img { max-width:90vw; margin-bottom:15.4px;}
         }
     </style>
 </head>
 <body>
 <div class="swiper mySwiper">
     <div class="swiper-wrapper" style="background:#091b4a;">
-        <!-- Slide 1 -->
+        <!-- PRESENTAZIONE CON LOGO -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('hero.jpg');"></div>
@@ -87,7 +41,10 @@
                         <img src="1.png" alt="Giuseppe Melizza Cantante" class="header-img">
                         <div class="title">Benvenuto nel mio spazio artistico</div>
                         <div class="subtitle">Voce, ricerca, presenza scenica</div>
-                        Dal primo palco alle esperienze di frontiera: canto per esplorare le emozioni e raccontare storie. Ogni colore della voce è un viaggio che condivido con chi ascolta.
+                        <span>
+                            Vorrei condividere la mia esperienza e raccontare emozioni piu' che dare certezze.<br>
+                            Potrei portare il pubblico in un viaggio musicale dove ogni colore della voce nasce dal desiderio di esplorare.
+                        </span>
                         <div class="sample-block">
                             <div class="sample-label">Sample Live Opening</div>
                             <audio controls>
@@ -98,14 +55,15 @@
                 </div>
             </div>
         </div>
-        <!-- Slide 2 -->
+
+        <!-- ENERGIA & RITMO -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Energia & Ritmo</div>
-                        <div class="subtitle">Impulso rock • Adrenalina • Istinto</div>
-                        Sul palco porto il lato esplosivo della voce: grinta ed emozione si fondono in presenza scenica. Tiro emotivo, tecnica e improvvisazione puntano sempre alla connessione schietta col pubblico.
+                        <div class="subtitle">Impulso rock & Adrenalina</div>
+                        Potrei portare il lato piu' esplosivo della voce: ritmo, improvvisazione ed emozione sempre in connessione col pubblico.
                         <div class="sample-block">
                             <div class="sample-label">Sample Rock Intenso</div>
                             <audio controls>
@@ -117,17 +75,18 @@
                 <div class="img-col right" style="background-image:url('rock.jpg');"></div>
             </div>
         </div>
-        <!-- Slide 3 -->
+
+        <!-- INTIMITA' & VOCE -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('intimate.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
-                        <div class="title">Intimità & Voce</div>
-                        <div class="subtitle">Confidenza • Emozione • Colore</div>
-                        La mia voce diventa confessione nei momenti introspettivi: canzoni e performance che mettono in gioco vulnerabilità e sensazioni vere. Voglio che ogni ascoltatore trovi la propria “sfumatura” nelle mie interpretazioni.
+                        <div class="title">Intimita' & Voce</div>
+                        <div class="subtitle">Confidenza & Emozione</div>
+                        Vorrei condividere la vulnerabilita' e la naturalezza di ogni nota, perche' mi piacerebbe che chi ascolta si riconoscesse in ogni sfumatura.
                         <div class="sample-block">
-                            <div class="sample-label">Sample Piano & Voce</div>
+                            <div class="sample-label">Sample Voce Intima</div>
                             <audio controls>
                                 <source src="intimita-sample.mp3" type="audio/mpeg">
                             </audio>
@@ -136,15 +95,16 @@
                 </div>
             </div>
         </div>
-        <!-- Slide 4 -->
+
+        <!-- OLTRE LA MASCHERA -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
                     <div class="txt-box">
-                        <div class="title">Oltre la Maschera</div>
-                        <div class="subtitle">Persona • Collaborazioni • Contatti</div>
-                        Artista, interprete, ma prima persona: credo nell’imperfezione come fonte di autenticità. Scrivimi o ascolta i sample per collaborazioni, info, incontri creativi.
-                        <span style="font-size:0.9rem; color:#FFD66B; display:block; margin-top:10px;">giuseppe@email.it</span>
+                        <div class="title">Oltre la maschera</div>
+                        <div class="subtitle">Persona e artista</div>
+                        Artista e persona non sono mai separati: vorrei condividere la mia storia vera, la mia evoluzione e i miei desideri autentici.<br>
+                        <span style="font-size:1.056rem; color:#FFD66B; display:block; margin-top:11px;">giuseppe@email.it</span>
                         <div class="sample-block">
                             <div class="sample-label">Sample Extra</div>
                             <audio controls>
@@ -154,6 +114,90 @@
                     </div>
                 </div>
                 <div class="img-col right" style="background-image:url('bio.jpg');"></div>
+            </div>
+        </div>
+
+        <!-- SOTTOSEZIONE 1: TEATRO & ENSEMBLE - TESTO A SINISTRA -->
+        <div class="swiper-slide">
+            <div class="slide-row">
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Vorrei trasmettere</div>
+                        <div class="subtitle">La forza del gruppo</div>
+                        Vorrei raccontare l'energia del teatro e la magia della coralita': qui ogni voce e' essenziale per costruire qualcosa di unico.
+                    </div>
+                </div>
+                <div class="img-col right" style="background-image:url('IMG_0823.jpg');"></div>
+            </div>
+        </div>
+
+        <!-- SOTTOSEZIONE 2: BACKSTAGE - TESTO A SINISTRA -->
+        <div class="swiper-slide">
+            <div class="slide-row">
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Mi piacerebbe</div>
+                        <div class="subtitle">Raccontare il backstage</div>
+                        Potrei mostrare la spontaneita' e le relazioni vere che nascono tra le mura dei camerini—momenti che spesso valgono piu' dello spettacolo stesso.
+                    </div>
+                </div>
+                <div class="img-col right" style="background-image:url('IMG_0826.jpg');"></div>
+            </div>
+        </div>
+
+        <!-- SOTTOSEZIONE 3: QUOTIDIANITA' - TESTO A SINISTRA -->
+        <div class="swiper-slide">
+            <div class="slide-row">
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Vorrei far vedere</div>
+                        <div class="subtitle">La quotidianita'</div>
+                        Mi piacerebbe mostrare la semplicita' della vita di tutti i giorni—dove nasce la mia energia piu' vera.
+                    </div>
+                </div>
+                <div class="img-col right" style="background-image:url('IMG_0833.jpg');"></div>
+            </div>
+        </div>
+
+        <!-- SOTTOSEZIONE 4: SOLISTA PALCO - TESTO A SINISTRA -->
+        <div class="swiper-slide">
+            <div class="slide-row">
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Potrei raccontare</div>
+                        <div class="subtitle">Il palco da solo</div>
+                        Vorrei comunicare l'effetto di sentirsi totalmente immersi in uno sguardo, in una luce, in una emozione condivisa con tutto il pubblico.
+                    </div>
+                </div>
+                <div class="img-col right" style="background-image:url('IMG_0820.jpg');"></div>
+            </div>
+        </div>
+
+        <!-- SOTTOSEZIONE 5: IRONIA - TESTO A SINISTRA -->
+        <div class="swiper-slide">
+            <div class="slide-row">
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Vorrei sorprenderti</div>
+                        <div class="subtitle">Con ironia e leggerezza</div>
+                        Potrei regalare un sorriso anche quando la musica racconta altro: la persona resta sempre dietro l'artista.
+                    </div>
+                </div>
+                <div class="img-col right" style="background-image:url('IMG_0788.jpg');"></div>
+            </div>
+        </div>
+
+        <!-- SOTTOSEZIONE 6: CHI SONO - TESTO A SINISTRA -->
+        <div class="swiper-slide">
+            <div class="slide-row">
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Vorrei presentarmi</div>
+                        <div class="subtitle">Chi sono davvero</div>
+                        La mia arte nasce da una persona vera: passioni, lavori, incontri e il desiderio di fare qualcosa che abbia senso per me e per chi ascolta.
+                    </div>
+                </div>
+                <div class="img-col right" style="background-image:url('IMG_0564.jpg');"></div>
             </div>
         </div>
     </div>
