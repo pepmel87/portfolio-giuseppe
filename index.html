@@ -19,7 +19,7 @@
 
         .swiper {
             width:100vw;
-            height:100dvh; /* usa area visibile anche su mobile */
+            height:100vh;          /* torniamo a 1 slide = tutto schermo */
         }
 
         .swiper-wrapper { background:#091b4a; }
@@ -27,7 +27,7 @@
         .slide-row {
             display:flex;
             width:100vw;
-            height:100vh;
+            height:100vh;          /* piena altezza su tutti i device */
         }
 
         .img-col {
@@ -92,40 +92,25 @@
             border-radius:12px;
             background:#233265;
             margin-top:8.8px;
-            min-height: 48px;       /* più alto per iPhone */
+            min-height:48px;              /* per iPhone */
         }
 
         audio::-webkit-media-controls-panel {
-            height: 48px;           /* pannello controlli più alto su Safari */
+            height:48px;
         }
 
-        /* MOBILE VERTICALE: due slide “mezze” in vista */
-        @media (max-width:900px) and (orientation: portrait) {
+        /* SOLO ADATTAMENTI LEGGERI SU MOBILE, MA 1 SLIDE RESTA INTERA */
+        @media (max-width:900px) {
             .slide-row {
                 flex-direction:column;
-                height:50vh;          /* metà schermo circa */
             }
             .img-col, .txt-col {
                 width:100vw;
-                height:25vh;          /* 2 righe: immagine e testo */
+                height:50vh;              /* metà immagine + metà testo, ma di UNA sola slide */
             }
             .txt-box { font-size:1.067rem; }
             .title { font-size:1.21rem; }
             .header-img { max-width:90vw; margin-bottom:15.4px; }
-        }
-
-        /* MOBILE ORIZZONTALE: layout originale a tutta altezza */
-        @media (max-width:900px) and (orientation: landscape) {
-            .slide-row {
-                flex-direction:row;
-                height:100vh;
-            }
-            .img-col, .txt-col {
-                width:50vw;
-                height:100vh;
-            }
-            .txt-box { font-size:1.15rem; }
-            .title { font-size:1.9rem; }
         }
     </style>
 </head>
@@ -309,3 +294,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
+var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    mousewheel: true,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    speed: 900,
+    allowTouchMove: true
+});
+</script>
+</body>
+</html>
