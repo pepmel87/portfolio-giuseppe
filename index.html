@@ -3,35 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <title>Giuseppe Melizza | Cantante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <style>
         @font-face { font-family: 'Breathing'; src: url('Breathing.ttf') format('truetype'); }
         @font-face { font-family: 'FuturaBold'; src: url('FuturaBold.ttf') format('truetype'); font-weight:bold; font-style:normal; }
-        html, body { background:#091b4a; margin:0; height:100%; font-family:'FuturaBold', Arial, sans-serif; font-size:110%; }
-        .swiper { width:100vw; height:100vh; }
-        .slide-row { display:flex; width:100vw; height:100vh; }
-        .img-col { width:50vw; height:100vh; background-size:cover; background-position:center; }
+
+        html, body {
+            background:#091b4a;
+            margin:0;
+            height:100%;
+            font-family:'FuturaBold', Arial, sans-serif;
+            font-size:110%;
+        }
+
+        .swiper {
+            width:100vw;
+            height:100dvh; /* usa area visibile anche su mobile */
+        }
+
+        .swiper-wrapper { background:#091b4a; }
+
+        .slide-row {
+            display:flex;
+            width:100vw;
+            height:100vh;
+        }
+
+        .img-col {
+            width:50vw;
+            height:100vh;
+            background-size:cover;
+            background-position:center;
+        }
         .img-col.right { order:2; }
-        .txt-col { width:50vw; background:#091b4a; height:100vh; display:flex; align-items:center; justify-content:center; }
-        .txt-box { color:#FFD66B; font-size:1.287rem; max-width:90%; text-align:left;}
-        .header-img { display:block; width:100%; max-width:600px; height:auto; margin:0 0 20px 0; }
-        .title { font-family: 'Breathing', Arial, sans-serif; font-size:2.31rem; letter-spacing:1px; margin-bottom:19.8px; color:#FFD66B; }
-        .subtitle { font-family: 'Breathing', Arial, sans-serif; font-size:1.375rem; margin-bottom:28.6px; color:#F1B575;}
-        .sample-block { margin:30.8px 0 0 0;}
-        .sample-label { font-size:1.1rem; color:#FFD66B; font-family:'FuturaBold', Arial, sans-serif; margin-bottom:7.7px; letter-spacing:1px;}
-        audio { width:94%; border-radius:12px; background:#233265; margin-top:8.8px;}
-        @media(max-width:900px){
-            .slide-row { flex-direction:column; }
-            .img-col, .txt-col { width:100vw; height:50vh;}
-            .txt-box { font-size:1.067rem;}
-            .title { font-size:1.21rem;}
-            .header-img { max-width:90vw; margin-bottom:15.4px;}
+
+        .txt-col {
+            width:50vw;
+            background:#091b4a;
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .txt-box {
+            color:#FFD66B;
+            font-size:1.287rem;
+            max-width:90%;
+            text-align:left;
+        }
+
+        .header-img {
+            display:block;
+            width:100%;
+            max-width:600px;
+            height:auto;
+            margin:0 0 20px 0;
+        }
+
+        .title {
+            font-family: 'Breathing', Arial, sans-serif;
+            font-size:2.31rem;
+            letter-spacing:1px;
+            margin-bottom:19.8px;
+            color:#FFD66B;
+        }
+
+        .subtitle {
+            font-family: 'Breathing', Arial, sans-serif;
+            font-size:1.375rem;
+            margin-bottom:28.6px;
+            color:#F1B575;
+        }
+
+        .sample-block { margin:30.8px 0 0 0; }
+
+        .sample-label {
+            font-size:1.1rem;
+            color:#FFD66B;
+            font-family:'FuturaBold', Arial, sans-serif;
+            margin-bottom:7.7px;
+            letter-spacing:1px;
+        }
+
+        audio {
+            width:94%;
+            border-radius:12px;
+            background:#233265;
+            margin-top:8.8px;
+            min-height: 48px;       /* più alto per iPhone */
+        }
+
+        audio::-webkit-media-controls-panel {
+            height: 48px;           /* pannello controlli più alto su Safari */
+        }
+
+        /* MOBILE VERTICALE: due slide “mezze” in vista */
+        @media (max-width:900px) and (orientation: portrait) {
+            .slide-row {
+                flex-direction:column;
+                height:50vh;          /* metà schermo circa */
+            }
+            .img-col, .txt-col {
+                width:100vw;
+                height:25vh;          /* 2 righe: immagine e testo */
+            }
+            .txt-box { font-size:1.067rem; }
+            .title { font-size:1.21rem; }
+            .header-img { max-width:90vw; margin-bottom:15.4px; }
+        }
+
+        /* MOBILE ORIZZONTALE: layout originale a tutta altezza */
+        @media (max-width:900px) and (orientation: landscape) {
+            .slide-row {
+                flex-direction:row;
+                height:100vh;
+            }
+            .img-col, .txt-col {
+                width:50vw;
+                height:100vh;
+            }
+            .txt-box { font-size:1.15rem; }
+            .title { font-size:1.9rem; }
         }
     </style>
 </head>
 <body>
 <div class="swiper mySwiper">
-    <div class="swiper-wrapper" style="background:#091b4a;">
+    <div class="swiper-wrapper">
         <!-- PRESENTAZIONE CON LOGO -->
         <div class="swiper-slide">
             <div class="slide-row">
@@ -99,7 +199,7 @@
             </div>
         </div>
 
-        <!-- OLTRE LA MASCHERA -->
+        <!-- OLTRE LA MASCHERA + FOLLIA D'AMORE -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -121,7 +221,7 @@
             </div>
         </div>
 
-        <!-- SOTTOSEZIONE 1: TEATRO & ENSEMBLE - TESTO A SINISTRA -->
+        <!-- TEATRO & ENSEMBLE -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -135,7 +235,7 @@
             </div>
         </div>
 
-        <!-- SOTTOSEZIONE 2: BACKSTAGE - TESTO A SINISTRA -->
+        <!-- BACKSTAGE -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -149,7 +249,7 @@
             </div>
         </div>
 
-        <!-- SOTTOSEZIONE 3: QUOTIDIANITA' - TESTO A SINISTRA -->
+        <!-- QUOTIDIANITA' -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -163,7 +263,7 @@
             </div>
         </div>
 
-        <!-- SOTTOSEZIONE 4: SOLISTA PALCO - TESTO A SINISTRA -->
+        <!-- SOLISTA PALCO -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -177,7 +277,7 @@
             </div>
         </div>
 
-        <!-- SOTTOSEZIONE 5: IRONIA - TESTO A SINISTRA -->
+        <!-- IRONIA -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -191,7 +291,7 @@
             </div>
         </div>
 
-        <!-- SOTTOSEZIONE 6: CHI SONO - TESTO A SINISTRA -->
+        <!-- CHI SONO -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -206,16 +306,6 @@
         </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-var swiper = new Swiper(".mySwiper", {
-    direction: "vertical",
-    mousewheel: true,
-    effect: "fade",
-    fadeEffect: { crossFade: true },
-    speed: 900,
-    allowTouchMove: true,
-});
-</script>
-</body>
-</html>
