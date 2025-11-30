@@ -40,7 +40,7 @@
             height:100%;
             background-size:cover;
             background-position:center;
-            position:relative; /* per overlay del logo nella prima slide */
+            position:relative;
         }
 
         .img-col.right { order:2; }
@@ -61,7 +61,14 @@
             text-align:left;
         }
 
-        /* LOGO OVERLAY SOLO PRIMA SLIDE */
+        .header-img {
+            display:block;
+            width:100%;
+            max-width:600px;
+            height:auto;
+            margin:0 0 20px 0;
+        }
+
         .logo-overlay {
             position:absolute;
             top:12%;
@@ -110,7 +117,7 @@
             height:48px;
         }
 
-        /* MOBILE: immagine sopra, testo subito sotto, agganciato in alto */
+        /* MOBILE: immagine sopra, testo in alto subito sotto, font leggermente ridotti */
         @media (max-width:900px) {
             .swiper-slide {
                 height:100vh;
@@ -136,7 +143,7 @@
             }
 
             .txt-box {
-                font-size:0.95rem;
+                font-size:0.88rem;          /* ridotto rispetto a 0.95 precedente */
                 max-width:94%;
                 margin:0;
                 padding:8px 10px 0 10px;
@@ -144,21 +151,25 @@
 
             .logo-overlay {
                 top:10%;
-                width:80%;
-                max-width:340px;
+                width:78%;
+                max-width:330px;
             }
 
             .title {
-                font-size:1.5rem;
-                margin:0 0 6px 0;
+                font-size:1.38rem;          /* leggermente piu' piccolo */
+                margin:0 0 5px 0;
             }
 
             .subtitle {
-                font-size:1rem;
-                margin:0 0 10px 0;
+                font-size:0.92rem;          /* proporzionale */
+                margin:0 0 9px 0;
             }
 
-            .sample-block { margin-top:10px; }
+            .sample-label {
+                font-size:0.95rem;          /* anche l'etichetta un filo piu' piccola */
+            }
+
+            .sample-block { margin-top:9px; }
         }
     </style>
 </head>
@@ -169,7 +180,6 @@
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('hero.jpg');">
-                    <!-- Logo 1.png sovrapposto e centrato -->
                     <img src="1.png" alt="Giuseppe Melizza Cantante" class="logo-overlay">
                 </div>
                 <div class="txt-col">
