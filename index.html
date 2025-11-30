@@ -40,6 +40,7 @@
             height:100%;
             background-size:cover;
             background-position:center;
+            position:relative; /* per overlay del logo nella prima slide */
         }
 
         .img-col.right { order:2; }
@@ -60,12 +61,16 @@
             text-align:left;
         }
 
-        .header-img {
-            display:block;
-            width:100%;
+        /* LOGO OVERLAY SOLO PRIMA SLIDE */
+        .logo-overlay {
+            position:absolute;
+            top:12%;
+            left:50%;
+            transform:translateX(-50%);
+            width:70%;
             max-width:600px;
             height:auto;
-            margin:0 0 20px 0;
+            pointer-events:none;
         }
 
         .title {
@@ -121,26 +126,26 @@
                 height:50%;
             }
 
-            /* Ordine fisso: immagine prima, testo dopo */
             .img-col {
                 order:1 !important;
             }
             .txt-col {
                 order:2 !important;
-                align-items:flex-start;      /* testo tirato in alto */
-                justify-content:flex-start;  /* niente centratura verticale */
+                align-items:flex-start;
+                justify-content:flex-start;
             }
 
             .txt-box {
                 font-size:0.95rem;
                 max-width:94%;
                 margin:0;
-                padding:8px 10px 0 10px;    /* incolla il testo sotto la foto */
+                padding:8px 10px 0 10px;
             }
 
-            .header-img {
-                max-width:90vw;
-                margin:0 0 8px 0;
+            .logo-overlay {
+                top:10%;
+                width:80%;
+                max-width:340px;
             }
 
             .title {
@@ -163,10 +168,12 @@
         <!-- 1. PRESENTAZIONE -->
         <div class="swiper-slide">
             <div class="slide-row">
-                <div class="img-col" style="background-image:url('hero.jpg');"></div>
+                <div class="img-col" style="background-image:url('hero.jpg');">
+                    <!-- Logo 1.png sovrapposto e centrato -->
+                    <img src="1.png" alt="Giuseppe Melizza Cantante" class="logo-overlay">
+                </div>
                 <div class="txt-col">
                     <div class="txt-box">
-                        <img src="1.png" alt="Giuseppe Melizza Cantante" class="header-img">
                         <div class="title">Benvenuto</div>
                         <div class="subtitle">Voce & Scena</div>
                         <span>
@@ -310,4 +317,43 @@
         <!-- 9. IRONIA -->
         <div class="swiper-slide">
             <div class="slide-row">
-                <div class="img-col" style="
+                <div class="img-col" style="background-image:url('IMG_0788.jpg');"></div>
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Ironia</div>
+                        <div class="subtitle">Leggerezza</div>
+                        Potrei regalare un sorriso anche quando la musica racconta altro: la persona resta sempre dietro l'artista.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. CHI SONO -->
+        <div class="swiper-slide">
+            <div class="slide-row">
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Chi sono</div>
+                        <div class="subtitle">Passione vera</div>
+                        La mia arte nasce da passioni, lavori, incontri e dal desiderio di fare qualcosa che abbia senso per me e per chi ascolta.
+                    </div>
+                </div>
+                <div class="img-col right" style="background-image:url('IMG_0564.jpg');"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    mousewheel: true,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    speed: 900,
+    allowTouchMove: true
+});
+</script>
+</body>
+</html>
