@@ -19,31 +19,35 @@
 
         .swiper {
             width:100vw;
-            height:100dvh; /* 100% dell'altezza viewport */
+            height:100vh;
         }
 
         .swiper-wrapper { background:#091b4a; }
 
-        /* STILE BASE (Desktop First) */
-        .slide-row {
-            display:flex;
+        .swiper-slide {
             width:100vw;
             height:100vh;
         }
 
+        .slide-row {
+            display:flex;
+            width:100%;
+            height:100%;
+        }
+
         .img-col {
-            width:50vw;
-            height:100vh;
+            width:50%;
+            height:100%;
             background-size:cover;
             background-position:center;
         }
-        /* Di base su desktop rispettiamo l'ordine HTML o la classe .right */
+
         .img-col.right { order:2; }
 
         .txt-col {
-            width:50vw;
+            width:50%;
+            height:100%;
             background:#091b4a;
-            height:100vh;
             display:flex;
             align-items:center;
             justify-content:center;
@@ -65,17 +69,17 @@
         }
 
         .title {
-            font-family: 'Breathing', Arial, sans-serif;
+            font-family:'Breathing', Arial, sans-serif;
             font-size:2.31rem;
             letter-spacing:1px;
-            margin-bottom:19.8px;
+            margin:0 0 19.8px 0;
             color:#FFD66B;
         }
 
         .subtitle {
-            font-family: 'Breathing', Arial, sans-serif;
+            font-family:'Breathing', Arial, sans-serif;
             font-size:1.375rem;
-            margin-bottom:28.6px;
+            margin:0 0 28.6px 0;
             color:#F1B575;
         }
 
@@ -94,61 +98,62 @@
             border-radius:12px;
             background:#233265;
             margin-top:8.8px;
-            min-height: 48px; 
+            min-height:48px;
         }
-        audio::-webkit-media-controls-panel { height: 48px; }
 
-        /* =========================================
-           MOBILE LAYOUT (Sotto i 900px)
-           Due slide per schermata, layout a scacchiera
-           ========================================= */
+        audio::-webkit-media-controls-panel {
+            height:48px;
+        }
+
+        /* MOBILE: immagine sopra, testo subito sotto, titoli attaccati in alto */
         @media (max-width:900px) {
-            /* Ogni slide diventa alta il 50% dello schermo */
             .swiper-slide {
-                height: 50vh !important;
-                box-sizing: border-box;
-                border-bottom: 1px solid rgba(255, 214, 107, 0.1); /* Separatore sottile */
+                height:100vh;
             }
 
             .slide-row {
-                flex-direction: row; /* Mantiene affiancati img e testo */
-                height: 100%;
+                flex-direction:column;
             }
 
-            /* Immagine e testo occupano 50% larghezza e 100% altezza della mezza slide */
-            .img-col, .txt-col {
-                width: 50vw;
-                height: 100%;
+            .img-col,
+            .txt-col {
+                width:100%;
+                height:50%;
             }
 
-            /* Adattamento testi per lo spazio ridotto */
+            .img-col { order:1; }
+            .txt-col { order:2; }
+
             .txt-box {
-                font-size: 0.85rem; 
-                max-width: 95%;
-                padding: 0 5px;
+                font-size:0.95rem;
+                max-width:94%;
+                margin:0;
+                padding:8px 10px 0 10px; /* porta il blocco testo subito sotto la foto */
             }
-            .title { font-size: 1.3rem; margin-bottom: 10px; }
-            .subtitle { font-size: 0.9rem; margin-bottom: 10px; }
-            .header-img { max-width: 100%; margin-bottom: 10px; }
-            .sample-block { margin-top: 15px; }
-            audio { transform: scale(0.9); transform-origin: left top; width: 100%; }
 
-            /* --- LOGICA A SCACCHIERA --- */
-            
-            /* Slide DISPARI (1, 3, 5...): Immagine Sinistra / Testo Destra */
-            .swiper-slide:nth-child(odd) .img-col { order: 1; }
-            .swiper-slide:nth-child(odd) .txt-col { order: 2; }
+            .header-img {
+                max-width:90vw;
+                margin:0 0 8px 0;
+            }
 
-            /* Slide PARI (2, 4, 6...): Testo Sinistra / Immagine Destra */
-            .swiper-slide:nth-child(even) .img-col { order: 2; }
-            .swiper-slide:nth-child(even) .txt-col { order: 1; }
+            .title {
+                font-size:1.5rem;
+                margin:0 0 6px 0;   /* nessuno spazio sopra, poco sotto */
+            }
+
+            .subtitle {
+                font-size:1rem;
+                margin:0 0 10px 0;
+            }
+
+            .sample-block { margin-top:10px; }
         }
     </style>
 </head>
 <body>
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-        <!-- 1. PRESENTAZIONE (Dispari: Img Sx / Txt Dx su mobile) -->
+        <!-- 1. PRESENTAZIONE -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('hero.jpg');"></div>
@@ -158,12 +163,14 @@
                         <div class="title">Benvenuto</div>
                         <div class="subtitle">Voce & Scena</div>
                         <span>
-                            Vorrei condividere la mia esperienza e raccontare emozioni piu' che dare certezze.
+                            Vorrei condividere la mia esperienza e raccontare emozioni piu' che dare certezze.<br>
+                            Potrei portare il pubblico in un viaggio musicale dove ogni colore della voce nasce dal desiderio di esplorare.
                         </span>
                         <div class="sample-block">
-                            <div class="sample-label">Sample Opening</div>
+                            <div class="sample-label">Sample Live Opening</div>
                             <audio controls>
                                 <source src="intro-sample.mp3" type="audio/mpeg">
+                                Il tuo browser non supporta il formato audio.
                             </audio>
                         </div>
                     </div>
@@ -171,18 +178,19 @@
             </div>
         </div>
 
-        <!-- 2. ENERGIA (Pari: Txt Sx / Img Dx su mobile) -->
+        <!-- 2. ENERGIA -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Energia</div>
                         <div class="subtitle">Impulso rock</div>
-                        Potrei portare il lato piu' esplosivo della voce: ritmo e improvvisazione.
+                        Potrei portare il lato piu' esplosivo della voce: ritmo, improvvisazione ed emozione sempre in connessione col pubblico.
                         <div class="sample-block">
-                            <div class="sample-label">Sample Rock</div>
+                            <div class="sample-label">Sample Rock Intenso</div>
                             <audio controls>
                                 <source src="energia-sample.mp3" type="audio/mpeg">
+                                Il tuo browser non supporta il formato audio.
                             </audio>
                         </div>
                     </div>
@@ -191,19 +199,20 @@
             </div>
         </div>
 
-        <!-- 3. INTIMITA' (Dispari: Img Sx / Txt Dx su mobile) -->
+        <!-- 3. INTIMITA' -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('intimate.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Intimita'</div>
-                        <div class="subtitle">Emozione Pura</div>
-                        Vorrei condividere la vulnerabilita' e la naturalezza di ogni nota.
+                        <div class="subtitle">Confidenza & Emozione</div>
+                        Vorrei condividere la vulnerabilita' e la naturalezza di ogni nota, perche' mi piacerebbe che chi ascolta si riconoscesse in ogni sfumatura.
                         <div class="sample-block">
-                            <div class="sample-label">Sample Intimo</div>
+                            <div class="sample-label">Sample Voce Intima</div>
                             <audio controls>
                                 <source src="intimita-sample.mp3" type="audio/mpeg">
+                                Il tuo browser non supporta il formato audio.
                             </audio>
                         </div>
                     </div>
@@ -211,19 +220,22 @@
             </div>
         </div>
 
-        <!-- 4. OLTRE MASCHERA (Pari: Txt Sx / Img Dx su mobile) -->
+        <!-- 4. OLTRE LA MASCHERA -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
                     <div class="txt-box">
-                        <div class="title">La Persona</div>
-                        <div class="subtitle">Oltre la maschera</div>
-                        Artista e persona non sono mai separati. La mia storia vera.
-                        <span style="font-size:0.9rem; color:#FFD66B; display:block; margin-top:5px;">giuseppe@email.it</span>
+                        <div class="title">Oltre la maschera</div>
+                        <div class="subtitle">Persona e artista</div>
+                        Artista e persona non sono mai separati: vorrei condividere la mia storia vera, la mia evoluzione e i miei desideri autentici.<br>
+                        <span style="font-size:0.95rem; color:#FFD66B; display:block; margin-top:8px;">
+                            giuseppe@email.it
+                        </span>
                         <div class="sample-block">
-                            <div class="sample-label">Follia d'amore</div>
+                            <div class="sample-label">Sample Extra - Follia d'amore</div>
                             <audio controls>
                                 <source src="follia-damore.m4a" type="audio/mp4">
+                                Il tuo browser non supporta il formato audio.
                             </audio>
                         </div>
                     </div>
@@ -232,7 +244,7 @@
             </div>
         </div>
 
-        <!-- 5. TEATRO (Dispari) -->
+        <!-- 5. TEATRO -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('IMG_0823.jpg');"></div>
@@ -240,27 +252,27 @@
                     <div class="txt-box">
                         <div class="title">Il Gruppo</div>
                         <div class="subtitle">Forza corale</div>
-                        Vorrei raccontare l'energia del teatro e la magia della coralita'.
+                        Vorrei raccontare l'energia del teatro e la magia della coralita': qui ogni voce e' essenziale per costruire qualcosa di unico.
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 6. BACKSTAGE (Pari) -->
+        <!-- 6. BACKSTAGE -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Backstage</div>
                         <div class="subtitle">Dietro le quinte</div>
-                        Potrei mostrare la spontaneita' e le relazioni vere dei camerini.
+                        Potrei mostrare la spontaneita' e le relazioni vere che nascono tra le mura dei camerini—momenti che spesso valgono piu' dello spettacolo stesso.
                     </div>
                 </div>
                 <div class="img-col right" style="background-image:url('IMG_0826.jpg');"></div>
             </div>
         </div>
 
-        <!-- 7. QUOTIDIANITA (Dispari) -->
+        <!-- 7. QUOTIDIANITA' -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('IMG_0833.jpg');"></div>
@@ -268,27 +280,27 @@
                     <div class="txt-box">
                         <div class="title">Ogni Giorno</div>
                         <div class="subtitle">Semplicita'</div>
-                        Mi piacerebbe mostrare la vita quotidiana dove nasce l'energia.
+                        Mi piacerebbe mostrare la vita quotidiana da cui nasce la mia energia.
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 8. SOLISTA (Pari) -->
+        <!-- 8. SOLISTA -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Solista</div>
                         <div class="subtitle">Il palco da solo</div>
-                        Sentirsi totalmente immersi in uno sguardo e in una luce.
+                        Vorrei comunicare l'effetto di sentirsi totalmente immersi in uno sguardo, in una luce, in una emozione condivisa con tutto il pubblico.
                     </div>
                 </div>
                 <div class="img-col right" style="background-image:url('IMG_0820.jpg');"></div>
             </div>
         </div>
 
-        <!-- 9. IRONIA (Dispari) -->
+        <!-- 9. IRONIA -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('IMG_0788.jpg');"></div>
@@ -296,20 +308,20 @@
                     <div class="txt-box">
                         <div class="title">Ironia</div>
                         <div class="subtitle">Leggerezza</div>
-                        Potrei regalare un sorriso: la persona resta sempre dietro l'artista.
+                        Potrei regalare un sorriso anche quando la musica racconta altro: la persona resta sempre dietro l'artista.
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 10. CHI SONO (Pari) -->
+        <!-- 10. CHI SONO -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Chi sono</div>
                         <div class="subtitle">Passione vera</div>
-                        La mia arte nasce da passioni, lavori e incontri veri.
+                        La mia arte nasce da passioni, lavori, incontri e dal desiderio di fare qualcosa che abbia senso per me e per chi ascolta.
                     </div>
                 </div>
                 <div class="img-col right" style="background-image:url('IMG_0564.jpg');"></div>
@@ -320,29 +332,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper(".mySwiper", {
-        direction: "vertical",
-        mousewheel: true,
-        speed: 900,
-        
-        // CONFIGURAZIONE RESPONSIVE
-        breakpoints: {
-            // SU MOBILE (< 900px):
-            0: {
-                slidesPerView: 2,   // Mostra 2 slide alla volta (schermo diviso a metà)
-                slidesPerGroup: 2,  // Scorre a blocchi di 2
-                effect: "slide",    // Usa lo scorrimento normale (Fade non funziona con 2 view)
-                spaceBetween: 0
-            },
-            // SU DESKTOP (>= 900px):
-            900: {
-                slidesPerView: 1,   // Mostra 1 slide intera
-                slidesPerGroup: 1,
-                effect: "fade",     // Usa la dissolvenza come richiesto all'origine
-                fadeEffect: { crossFade: true }
-            }
-        }
-    });
+var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    mousewheel: true,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    speed: 900,
+    allowTouchMove: true
+});
 </script>
 </body>
 </html>
