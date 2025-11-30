@@ -105,7 +105,7 @@
             height:48px;
         }
 
-        /* MOBILE: immagine sopra, testo subito sotto, titoli attaccati in alto */
+        /* MOBILE: mantieni il layout che ti piaceva, ma forza sempre immagine sopra e testo sotto */
         @media (max-width:900px) {
             .swiper-slide {
                 height:100vh;
@@ -121,14 +121,19 @@
                 height:50%;
             }
 
-            .img-col { order:1; }
-            .txt-col { order:2; }
+            /* Ordine fisso: immagine prima, testo dopo, per tutte le slide */
+            .img-col {
+                order:1 !important;
+            }
+            .txt-col {
+                order:2 !important;
+            }
 
             .txt-box {
                 font-size:0.95rem;
                 max-width:94%;
                 margin:0;
-                padding:8px 10px 0 10px; /* porta il blocco testo subito sotto la foto */
+                padding:8px 10px 0 10px;
             }
 
             .header-img {
@@ -138,7 +143,7 @@
 
             .title {
                 font-size:1.5rem;
-                margin:0 0 6px 0;   /* nessuno spazio sopra, poco sotto */
+                margin:0 0 6px 0;
             }
 
             .subtitle {
