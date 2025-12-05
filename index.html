@@ -2,19 +2,14 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Giuseppe Melizza | Cantante</title>
+    <title>Giuseppe Melizza | Cantante-Attore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- INIZIO Sezione Favicon e Icone -->
-    <!-- Favicon classica per browser standard -->
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-    <!-- Icona PNG alta risoluzione -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <!-- Icona vettoriale SVG per browser moderni -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <!-- Icona per Apple/iOS -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <!-- Manifest per Android/PWA -->
     <link rel="manifest" href="/site.webmanifest">
     <!-- FINE Sezione Favicon e Icone -->
 
@@ -31,159 +26,76 @@
             font-size:110%;
         }
 
-        .swiper {
-            width:100vw;
-            height:100vh;
-        }
-
+        .swiper { width:100vw; height:100vh; }
         .swiper-wrapper { background:#091b4a; }
-
-        .swiper-slide {
-            width:100vw;
-            height:100vh;
-        }
-
-        .slide-row {
-            display:flex;
-            width:100%;
-            height:100%;
-        }
+        .swiper-slide { width:100vw; height:100vh; }
+        .slide-row { display:flex; width:100%; height:100%; }
 
         .img-col {
-            width:50%;
-            height:100%;
-            background-size:cover;
-            background-position:center;
+            width:50%; height:100%;
+            background-size:cover; background-position:center;
             position:relative;
         }
-
         .img-col.right { order:2; }
 
         .txt-col {
-            width:50%;
-            height:100%;
-            background:#091b4a;
-            display:flex;
-            align-items:center;
-            justify-content:center;
+            width:50%; height:100%; background:#091b4a;
+            display:flex; align-items:center; justify-content:center;
         }
 
-        .txt-box {
-            color:#FFD66B;
-            font-size:1.287rem;
-            max-width:90%;
-            text-align:left;
-        }
-
-        .header-img {
-            display:block;
-            width:100%;
-            max-width:600px;
-            height:auto;
-            margin:0 0 20px 0;
+        .txt-box { 
+            color:#FFD66B; font-size:1.287rem; max-width:90%; text-align:left; 
         }
 
         .logo-overlay {
-            position:absolute;
-            top:12%;
-            left:50%;
-            transform:translateX(-50%);
-            width:70%;
-            max-width:600px;
-            height:auto;
-            pointer-events:none;
+            position:absolute; top:12%; left:50%; transform:translateX(-50%);
+            width:70%; max-width:600px; height:auto; pointer-events:none;
         }
 
         .title {
-            font-family:'Breathing', Arial, sans-serif;
-            font-size:2.31rem;
-            letter-spacing:1px;
-            margin:0 0 19.8px 0;
-            color:#FFD66B;
+            font-family:'Breathing', Arial, sans-serif; font-size:2.31rem;
+            letter-spacing:1px; margin:0 0 19.8px 0; color:#FFD66B;
         }
-
         .subtitle {
-            font-family:'Breathing', Arial, sans-serif;
-            font-size:1.375rem;
-            margin:0 0 28.6px 0;
-            color:#F1B575;
+            font-family:'Breathing', Arial, sans-serif; font-size:1.375rem;
+            margin:0 0 28.6px 0; color:#F1B575;
         }
-
         .sample-block { margin:30.8px 0 0 0; }
-
         .sample-label {
-            font-size:1.1rem;
-            color:#FFD66B;
-            font-family:'FuturaBold', Arial, sans-serif;
-            margin-bottom:7.7px;
-            letter-spacing:1px;
+            font-size:1.1rem; color:#FFD66B; font-family:'FuturaBold', Arial, sans-serif;
+            margin-bottom:7.7px; letter-spacing:1px;
         }
-
-        audio {
-            width:94%;
-            border-radius:12px;
-            background:#233265;
-            margin-top:8.8px;
-            min-height:48px;
+        audio { 
+            width:94%; border-radius:12px; background:#233265; 
+            margin-top:8.8px; min-height:48px; 
         }
+        audio::-webkit-media-controls-panel { height:48px; }
 
-        audio::-webkit-media-controls-panel {
-            height:48px;
+        /* CONTATTI COMATTI */
+        .contacts {
+            font-size:1rem; color:#FFD66B; font-weight:bold;
+            display:block; margin:15px 0; padding:10px;
+            background:rgba(255,214,107,0.1); border-radius:8px;
         }
+        .contacts a { color:#FFD66B; text-decoration:none; }
 
-        /* MOBILE: immagine sopra, testo in alto, font ridotti */
+        /* MOBILE */
         @media (max-width:900px) {
-            .swiper-slide {
-                height:100vh;
+            .slide-row { flex-direction:column; }
+            .img-col, .txt-col { width:100%; height:50%; }
+            .img-col { order:1 !important; }
+            .txt-col { 
+                order:2 !important; align-items:flex-start; justify-content:flex-start;
             }
-
-            .slide-row {
-                flex-direction:column;
+            .txt-box { 
+                font-size:0.76rem; max-width:94%; margin:0; padding:8px 10px 0 10px; 
             }
-
-            .img-col,
-            .txt-col {
-                width:100%;
-                height:50%;
-            }
-
-            .img-col {
-                order:1 !important;
-            }
-            .txt-col {
-                order:2 !important;
-                align-items:flex-start;
-                justify-content:flex-start;
-            }
-
-            .txt-box {
-                font-size:0.76rem;
-                max-width:94%;
-                margin:0;
-                padding:8px 10px 0 10px;
-            }
-
-            .logo-overlay {
-                top:10%;
-                width:75%;
-                max-width:300px;
-            }
-
-            .title {
-                font-size:1.22rem;
-                margin:0 0 4px 0;
-            }
-
-            .subtitle {
-                font-size:0.8rem;
-                margin:0 0 7px 0;
-            }
-
-            .sample-label {
-                font-size:0.85rem;
-            }
-
+            .logo-overlay { top:10%; width:75%; max-width:300px; }
+            .title { font-size:1.22rem; margin:0 0 4px 0; }
+            .subtitle { font-size:0.8rem; margin:0 0 7px 0; }
+            .sample-label { font-size:0.85rem; }
             .sample-block { margin-top:7px; }
+            .contacts { font-size:0.9rem !important; padding:8px; }
         }
     </style>
 </head>
@@ -194,16 +106,13 @@
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('hero.jpg');">
-                    <img src="1.png" alt="Giuseppe Melizza Cantante" class="logo-overlay">
+                    <img src="1.png" alt="Giuseppe Melizza Cantante-Attore" class="logo-overlay">
                 </div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Benvenuto</div>
-                        <div class="subtitle">Voce & Scena</div>
-                        <span>
-                            Vorrei condividere la mia esperienza e raccontare emozioni piu' che dare certezze.<br>
-                            Potrei portare il pubblico in un viaggio musicale dove ogni colore della voce nasce dal desiderio di esplorare.
-                        </span>
+                        <div class="subtitle">Cantante-Attore</div>
+                        <span>Condivido la mia esperienza e racconto emozioni attraverso la voce e la scena.</span>
                         <div class="sample-block">
                             <div class="sample-label">Sample Live Opening</div>
                             <audio controls>
@@ -223,7 +132,7 @@
                     <div class="txt-box">
                         <div class="title">Energia</div>
                         <div class="subtitle">Impulso rock</div>
-                        Potrei portare il lato piu' esplosivo della voce: ritmo, improvvisazione ed emozione sempre in connessione col pubblico.
+                        <span>Porto il lato esplosivo della voce: ritmo, improvvisazione ed emozione sempre in connessione col pubblico.</span>
                         <div class="sample-block">
                             <div class="sample-label">Sample Rock Intenso</div>
                             <audio controls>
@@ -243,9 +152,9 @@
                 <div class="img-col" style="background-image:url('intimate.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
-                        <div class="title">Intimita'</div>
+                        <div class="title">Intimità</div>
                         <div class="subtitle">Confidenza & Emozione</div>
-                        Vorrei condividere la vulnerabilita' e la naturalezza di ogni nota, perche' mi piacerebbe che chi ascolta si riconoscesse in ogni sfumatura.
+                        <span>Condivido la vulnerabilità e la naturalezza di ogni nota, perché chi ascolta si riconosca in ogni sfumatura.</span>
                         <div class="sample-block">
                             <div class="sample-label">Sample Voce Intima</div>
                             <audio controls>
@@ -258,16 +167,16 @@
             </div>
         </div>
 
-        <!-- 4. NUOVA SLIDE: UNA LUNGA STORIA D'AMORE -->
+        <!-- 4. UNA LUNGA STORIA D'AMORE -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Una lunga storia</div>
                         <div class="subtitle">Interpretazione e piano</div>
-                        Un classico senza tempo in cui la voce si fa spazio tra i tasti del pianoforte per raccontare un sentimento eterno.
+                        <span>Un classico senza tempo in cui la voce si fa spazio tra i tasti del pianoforte per raccontare un sentimento eterno.</span>
                         <div class="sample-block">
-                            <div class="sample-label">Sample - Una lunga storia d'amore</div>
+                            <div class="sample-label">Una lunga storia d'amore</div>
                             <audio controls>
                                 <source src="lunga-storia-damore.m4a" type="audio/mp4">
                                 Il tuo browser non supporta il formato audio.
@@ -275,7 +184,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Per questa slide uso come sfondo intimate.jpg (o un'altra che preferisci) -->
                 <div class="img-col right" style="background-image:url('intimate.jpg');"></div>
             </div>
         </div>
@@ -283,16 +191,14 @@
         <!-- 5. OLTRE LA MASCHERA -->
         <div class="swiper-slide">
             <div class="slide-row">
+                <div class="img-col" style="background-image:url('bio.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Oltre la maschera</div>
                         <div class="subtitle">Persona e artista</div>
-                        Artista e persona non sono mai separati: vorrei condividere la mia storia vera, la mia evoluzione e i miei desideri autentici.<br>
-                        <span style="font-size:0.84rem; color:#FFD66B; display:block; margin-top:8px;">
-                            giuseppe@email.it
-                        </span>
+                        <span>Artista e persona non sono separati: condivido la mia storia vera, la mia evoluzione e i miei desideri autentici.</span>
                         <div class="sample-block">
-                            <div class="sample-label">Sample Extra - Follia d'amore</div>
+                            <div class="sample-label">Follia d'amore</div>
                             <audio controls>
                                 <source src="follia-damore.m4a" type="audio/mp4">
                                 Il tuo browser non supporta il formato audio.
@@ -300,91 +206,95 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-col right" style="background-image:url('bio.jpg');"></div>
             </div>
         </div>
 
         <!-- 6. TEATRO -->
         <div class="swiper-slide">
             <div class="slide-row">
-                <div class="img-col" style="background-image:url('IMG_0823.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Il Gruppo</div>
                         <div class="subtitle">Forza corale</div>
-                        Vorrei raccontare l'energia del teatro e la magia della coralita': qui ogni voce e' essenziale per costruire qualcosa di unico.
+                        <span>Racconto l'energia del teatro e la magia della coralità: ogni voce è essenziale per creare qualcosa di unico.</span>
                     </div>
                 </div>
+                <div class="img-col right" style="background-image:url('IMG_0823.jpg');"></div>
             </div>
         </div>
 
         <!-- 7. BACKSTAGE -->
         <div class="swiper-slide">
             <div class="slide-row">
+                <div class="img-col" style="background-image:url('IMG_0826.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Backstage</div>
                         <div class="subtitle">Dietro le quinte</div>
-                        Potrei mostrare la spontaneita' e le relazioni vere che nascono tra le mura dei camerini—momenti che spesso valgono piu' dello spettacolo stesso.
+                        <span>Mostro la spontaneità e le relazioni vere che nascono nei camerini: momenti che valgono più dello spettacolo.</span>
                     </div>
                 </div>
-                <div class="img-col right" style="background-image:url('IMG_0826.jpg');"></div>
             </div>
         </div>
 
-        <!-- 8. QUOTIDIANITA' -->
+        <!-- 8. QUOTIDIANITÀ -->
         <div class="swiper-slide">
             <div class="slide-row">
-                <div class="img-col" style="background-image:url('IMG_0833.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Ogni Giorno</div>
-                        <div class="subtitle">Semplicita'</div>
-                        Mi piacerebbe mostrare la vita quotidiana da cui nasce la mia energia.
+                        <div class="subtitle">Semplicità</div>
+                        <span>Mostro la vita quotidiana da cui nasce la mia energia più vera.</span>
                     </div>
                 </div>
+                <div class="img-col right" style="background-image:url('IMG_0833.jpg');"></div>
             </div>
         </div>
 
         <!-- 9. SOLISTA -->
         <div class="swiper-slide">
             <div class="slide-row">
+                <div class="img-col" style="background-image:url('IMG_0820.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Solista</div>
                         <div class="subtitle">Il palco da solo</div>
-                        Vorrei comunicare l'effetto di sentirsi totalmente immersi in uno sguardo, in una luce, in una emozione condivisa con tutto il pubblico.
+                        <span>Comunico l'effetto di sentirsi immersi in uno sguardo, una luce, un'emozione condivisa col pubblico.</span>
                     </div>
                 </div>
-                <div class="img-col right" style="background-image:url('IMG_0820.jpg');"></div>
             </div>
         </div>
 
         <!-- 10. IRONIA -->
         <div class="swiper-slide">
             <div class="slide-row">
-                <div class="img-col" style="background-image:url('IMG_0788.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Ironia</div>
                         <div class="subtitle">Leggerezza</div>
-                        Potrei regalare un sorriso anche quando la musica racconta altro: la persona resta sempre dietro l'artista.
+                        <span>Regalo un sorriso anche quando la musica racconta altro: la persona resta sempre dietro l'artista.</span>
                     </div>
                 </div>
+                <div class="img-col right" style="background-image:url('IMG_0788.jpg');"></div>
             </div>
         </div>
 
-        <!-- 11. CHI SONO -->
+        <!-- 11. CHI SONO + CONTATTI (FINALE COMATTO) -->
         <div class="swiper-slide">
             <div class="slide-row">
+                <div class="img-col" style="background-image:url('IMG_0564.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Chi sono</div>
-                        <div class="subtitle">Passione vera</div>
-                        La mia arte nasce da passioni, lavori, incontri e dal desiderio di fare qualcosa che abbia senso per me e per chi ascolta.
+                        <div class="subtitle">Cantante-Attore</div>
+                        <span>Sono Giuseppe Melizza, cantante-attore. Il mio percorso inizia da piccolo con la passione per la voce e la scena.<br>
+                        <strong class="contacts">
+                            Disponibile come cantante per eventi, attore per performance live.<br>
+                            <a href="mailto:giuseppe@email.it">Hai bisogno di un performer? Contattami → giuseppe@email.it</a>
+                        </strong>
+                        </span>
                     </div>
                 </div>
-                <div class="img-col right" style="background-image:url('IMG_0564.jpg');"></div>
             </div>
         </div>
     </div>
