@@ -5,12 +5,13 @@
     <title>Giuseppe Melizza | Cantante-Attore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Favicon come prima -->
+    <!-- INIZIO Sezione Favicon e Icone -->
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
+    <!-- FINE Sezione Favicon e Icone -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <style>
@@ -18,10 +19,11 @@
         @font-face { font-family: 'FuturaBold'; src: url('FuturaBold.ttf') format('truetype'); font-weight:bold; font-style:normal; }
 
         html, body {
-            background:#091b4a; margin:0; height:100%;
-            font-family:'FuturaBold', Arial, sans-serif; font-size:110%;
-            image-rendering: -webkit-optimize-contrast; /* ✅ Nitidezza Chrome */
-            image-rendering: crisp-edges;              /* ✅ Nitidezza Firefox */
+            background:#091b4a;
+            margin:0;
+            height:100%;
+            font-family:'FuturaBold', Arial, sans-serif;
+            font-size:110%;
         }
 
         .swiper { width:100vw; height:100vh; }
@@ -31,11 +33,7 @@
 
         .img-col {
             width:50%; height:100%;
-            background-size: cover !important;           /* ✅ Riempi spazio */
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-            image-rendering: -webkit-optimize-contrast;  /* ✅ Anti-sfocatura */
-            image-rendering: crisp-edges;
+            background-size:cover; background-position:center;
             position:relative;
         }
         .img-col.right { order:2; }
@@ -45,41 +43,53 @@
             display:flex; align-items:center; justify-content:center;
         }
 
-        .txt-box { color:#FFD66B; font-size:1.287rem; max-width:90%; text-align:left; }
+        .txt-box { 
+            color:#FFD66B; font-size:1.287rem; max-width:90%; text-align:left; 
+        }
 
         .logo-overlay {
             position:absolute; top:12%; left:50%; transform:translateX(-50%);
             width:70%; max-width:600px; height:auto; pointer-events:none;
-            image-rendering: -webkit-optimize-contrast;
         }
 
-        .title { font-family:'Breathing', Arial, sans-serif; font-size:2.31rem; letter-spacing:1px; margin:0 0 19.8px 0; color:#FFD66B; }
-        .subtitle { font-family:'Breathing', Arial, sans-serif; font-size:1.375rem; margin:0 0 28.6px 0; color:#F1B575; }
+        .title {
+            font-family:'Breathing', Arial, sans-serif; font-size:2.31rem;
+            letter-spacing:1px; margin:0 0 19.8px 0; color:#FFD66B;
+        }
+        .subtitle {
+            font-family:'Breathing', Arial, sans-serif; font-size:1.375rem;
+            margin:0 0 28.6px 0; color:#F1B575;
+        }
         .sample-block { margin:30.8px 0 0 0; }
-        .sample-label { font-size:1.1rem; color:#FFD66B; font-family:'FuturaBold', Arial, sans-serif; margin-bottom:7.7px; letter-spacing:1px; }
-        audio { width:94%; border-radius:12px; background:#233265; margin-top:8.8px; min-height:48px; }
+        .sample-label {
+            font-size:1.1rem; color:#FFD66B; font-family:'FuturaBold', Arial, sans-serif;
+            margin-bottom:7.7px; letter-spacing:1px;
+        }
+        audio { 
+            width:94%; border-radius:12px; background:#233265; 
+            margin-top:8.8px; min-height:48px; 
+        }
         audio::-webkit-media-controls-panel { height:48px; }
 
+        /* CONTATTI COMATTI */
         .contacts {
             font-size:1rem; color:#FFD66B; font-weight:bold;
             display:block; margin:15px 0; padding:10px;
             background:rgba(255,214,107,0.1); border-radius:8px;
         }
         .contacts a { color:#FFD66B; text-decoration:none; }
-        .contacts a:hover { text-decoration:underline; }
 
-        /* MOBILE OTTIMIZZATO */
+        /* MOBILE */
         @media (max-width:900px) {
             .slide-row { flex-direction:column; }
             .img-col, .txt-col { width:100%; height:50%; }
-            .img-col { 
-                order:1 !important;
-                background-size: cover !important;        /* ✅ Cover anche mobile */
-                background-position: center top !important;
-                image-rendering: pixelated;              /* ✅ Super nitido mobile */
+            .img-col { order:1 !important; }
+            .txt-col { 
+                order:2 !important; align-items:flex-start; justify-content:flex-start;
             }
-            .txt-col { order:2 !important; align-items:flex-start; justify-content:flex-start; }
-            .txt-box { font-size:0.76rem; max-width:94%; margin:0; padding:8px 10px 0 10px; }
+            .txt-box { 
+                font-size:0.76rem; max-width:94%; margin:0; padding:8px 10px 0 10px; 
+            }
             .logo-overlay { top:10%; width:75%; max-width:300px; }
             .title { font-size:1.22rem; margin:0 0 4px 0; }
             .subtitle { font-size:0.8rem; margin:0 0 7px 0; }
@@ -96,7 +106,7 @@
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('hero.jpg');">
-                    <img src="1.jpg" alt="Giuseppe Melizza Cantante-Attore" class="logo-overlay">
+                    <img src="1.png" alt="Giuseppe Melizza Cantante-Attore" class="logo-overlay">
                 </div>
                 <div class="txt-col">
                     <div class="txt-box">
@@ -105,7 +115,10 @@
                         <span>Condivido la mia esperienza e racconto emozioni attraverso la voce e la scena.</span>
                         <div class="sample-block">
                             <div class="sample-label">Sample Live Opening</div>
-                            <audio controls><source src="intro-sample.mp3" type="audio/mpeg">Il tuo browser non supporta il formato audio.</audio>
+                            <audio controls>
+                                <source src="intro-sample.mp3" type="audio/mpeg">
+                                Il tuo browser non supporta il formato audio.
+                            </audio>
                         </div>
                     </div>
                 </div>
@@ -122,36 +135,63 @@
                         <span>Porto il lato esplosivo della voce: ritmo, improvvisazione ed emozione sempre in connessione col pubblico.</span>
                         <div class="sample-block">
                             <div class="sample-label">Sample Rock Intenso</div>
-                            <audio controls><source src="energia-sample.mp3" type="audio/mpeg">Il tuo browser non supporta il formato audio.</audio>
+                            <audio controls>
+                                <source src="energia-sample.mp3" type="audio/mpeg">
+                                Il tuo browser non supporta il formato audio.
+                            </audio>
                         </div>
                     </div>
                 </div>
-                <div class="img-col right" style="background-image:url('IMG_0820.jpg');"></div>
+                <div class="img-col right" style="background-image:url('rock.jpg');"></div>
             </div>
         </div>
 
-        <!-- 3. INTIMITÀ + UNA LUNGA STORIA (FUSA) -->
+        <!-- 3. INTIMITA' -->
         <div class="swiper-slide">
             <div class="slide-row">
-                <div class="img-col" style="background-image:url('IMG_0830.jpg');"></div>
+                <div class="img-col" style="background-image:url('intimate.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
-                        <div class="title">Intimità & Amore</div>
-                        <div class="subtitle">Vulnerabilità e Pianoforte</div>
-                        <span>Condivido la vulnerabilità e la naturalezza di ogni nota, perché chi ascolta si riconosca in ogni sfumatura. Un classico senza tempo in cui la voce si fa spazio tra i tasti del pianoforte per raccontare un sentimento eterno.</span>
+                        <div class="title">Intimità</div>
+                        <div class="subtitle">Confidenza & Emozione</div>
+                        <span>Condivido la vulnerabilità e la naturalezza di ogni nota, perché chi ascolta si riconosca in ogni sfumatura.</span>
                         <div class="sample-block">
-                            <div class="sample-label">Una lunga storia d'amore</div>
-                            <audio controls><source src="lunga-storia-damore.m4a" type="audio/mp4">Il tuo browser non supporta il formato audio.</audio>
+                            <div class="sample-label">Sample Voce Intima</div>
+                            <audio controls>
+                                <source src="intimita-sample.mp3" type="audio/mpeg">
+                                Il tuo browser non supporta il formato audio.
+                            </audio>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 4. OLTRE LA MASCHERA -->
+        <!-- 4. UNA LUNGA STORIA D'AMORE -->
         <div class="swiper-slide">
             <div class="slide-row">
-                <div class="img-col" style="background-image:url('IMG_0564.jpg');"></div>
+                <div class="txt-col">
+                    <div class="txt-box">
+                        <div class="title">Una lunga storia</div>
+                        <div class="subtitle">Interpretazione e piano</div>
+                        <span>Un classico senza tempo in cui la voce si fa spazio tra i tasti del pianoforte per raccontare un sentimento eterno.</span>
+                        <div class="sample-block">
+                            <div class="sample-label">Una lunga storia d'amore</div>
+                            <audio controls>
+                                <source src="lunga-storia-damore.m4a" type="audio/mp4">
+                                Il tuo browser non supporta il formato audio.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-col right" style="background-image:url('intimate.jpg');"></div>
+            </div>
+        </div>
+
+        <!-- 5. OLTRE LA MASCHERA -->
+        <div class="swiper-slide">
+            <div class="slide-row">
+                <div class="img-col" style="background-image:url('bio.jpg');"></div>
                 <div class="txt-col">
                     <div class="txt-box">
                         <div class="title">Oltre la maschera</div>
@@ -159,14 +199,17 @@
                         <span>Artista e persona non sono separati: condivido la mia storia vera, la mia evoluzione e i miei desideri autentici.</span>
                         <div class="sample-block">
                             <div class="sample-label">Follia d'amore</div>
-                            <audio controls><source src="follia-damore.m4a" type="audio/mp4">Il tuo browser non supporta il formato audio.</audio>
+                            <audio controls>
+                                <source src="follia-damore.m4a" type="audio/mp4">
+                                Il tuo browser non supporta il formato audio.
+                            </audio>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 5. TEATRO -->
+        <!-- 6. TEATRO -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -180,7 +223,7 @@
             </div>
         </div>
 
-        <!-- 6. BACKSTAGE -->
+        <!-- 7. BACKSTAGE -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('IMG_0826.jpg');"></div>
@@ -194,7 +237,7 @@
             </div>
         </div>
 
-        <!-- 7. QUOTIDIANITÀ -->
+        <!-- 8. QUOTIDIANITÀ -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -208,7 +251,7 @@
             </div>
         </div>
 
-        <!-- 8. SOLISTA -->
+        <!-- 9. SOLISTA -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('IMG_0820.jpg');"></div>
@@ -222,7 +265,7 @@
             </div>
         </div>
 
-        <!-- 9. IRONIA -->
+        <!-- 10. IRONIA -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="txt-col">
@@ -236,7 +279,7 @@
             </div>
         </div>
 
-        <!-- 10. CHI SONO + CONTATTI -->
+        <!-- 11. CHI SONO + CONTATTI (FINALE COMATTO) -->
         <div class="swiper-slide">
             <div class="slide-row">
                 <div class="img-col" style="background-image:url('IMG_0564.jpg');"></div>
@@ -260,8 +303,12 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
 var swiper = new Swiper(".mySwiper", {
-    direction: "vertical", mousewheel: true, effect: "fade",
-    fadeEffect: { crossFade: true }, speed: 900, allowTouchMove: true
+    direction: "vertical",
+    mousewheel: true,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    speed: 900,
+    allowTouchMove: true
 });
 </script>
 </body>
